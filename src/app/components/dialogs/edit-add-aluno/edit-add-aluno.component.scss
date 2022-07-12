@@ -1,0 +1,77 @@
+.mat-dialog-title {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--secondary);
+  color: var(--primary);
+
+  mat-icon {
+    cursor: pointer;
+  }
+}
+
+.mat-dialog-content {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+}
+
+.mat-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+
+  button {
+    border-radius: 2px;
+    cursor: pointer;
+    margin-left: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--secondary);
+    background-color: var(--secondary);
+    color: #fff;
+
+    font-size: 1rem;
+    &:hover {
+      background-color: transparent;
+      color: var(--secondary);
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .danger {
+    border: 1px solid #df4759;
+    background-color: #df4759;
+    color: #fff;
+
+    &:hover {
+      color: #df4759;
+    }
+  }
+}
+
+::ng-deep .mat-form-field {
+  /*change color of text*/
+  color: var(--primary) !important;
+}
+
+::ng-deep .mat-form-field-label {
+  /*change color of label*/
+  color: var(--primary) !important;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+  /*change color of label when active*/
+  color: var(--secondary) !important;
+}
+
+::ng-deep .mat-form-field-underline {
+  /*change color of underline*/
+  background-color: var(--primary) !important;
+}
+
+::ng-deep .mat-form-field-ripple {
+  /*change color of underline when focused*/
+  background-color: var(--secondary) !important;
+}

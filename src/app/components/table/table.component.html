@@ -1,0 +1,19 @@
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <ng-container *ngFor="let column of columns" [matColumnDef]="column.def">
+    <mat-header-cell *matHeaderCellDef> {{ column.label }} </mat-header-cell>
+    <div *ngIf="column.def !== 'options'">
+      <mat-cell *matCellDef="let element">
+        {{ element[column.def] }}
+      </mat-cell>
+    </div>
+    <div *ngIf="column.def === 'options'">
+      <mat-cell *matCellDef="let element">
+        <mat-icon (click)="openDialogInfo(element.id)">info</mat-icon>
+        <mat-icon (click)="openEditDialog(element)">edit</mat-icon>
+        <mat-icon (click)="openDeleteDialog(element.id)"> delete </mat-icon>
+      </mat-cell>
+    </div>
+  </ng-container>
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+</mat-table>

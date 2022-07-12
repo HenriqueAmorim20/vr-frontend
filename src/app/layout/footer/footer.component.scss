@@ -1,0 +1,41 @@
+footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 2rem;
+
+  img {
+    height: 40px;
+  }
+
+  .texts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-transform: capitalize;
+  }
+
+  .author {
+    display: flex;
+    justify-content: flex-end;
+
+    a {
+      color: var(--tertiary);
+      margin-left: 0.5rem;
+    }
+  }
+}
+
+@media (max-width: 850px) {
+  footer {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+
+    img {
+      margin: auto;
+    }
+
+    .author {
+      justify-content: center;
+    }
+  }
+}

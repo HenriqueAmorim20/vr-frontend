@@ -1,0 +1,25 @@
+<div mat-dialog-title>
+  <h2>{{ curso.id ? 'Editar curso' : 'Adicionar curso' }}</h2>
+  <mat-icon (click)="dialogRef.close(false)">close</mat-icon>
+</div>
+<div mat-dialog-content>
+  <mat-form-field appearance="legacy">
+    <mat-label>Descrição</mat-label>
+    <input [(ngModel)]="curso.descricao" matInput required />
+  </mat-form-field>
+  <mat-form-field appearance="legacy">
+    <mat-label>Ementa</mat-label>
+    <textarea [(ngModel)]="curso.ementa" matInput rows="5" required></textarea>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="dialogRef.close(false)" class="danger">
+    cancelar
+  </button>
+  <button
+    mat-button
+    (click)="dialogRef.close(curso)"
+    [disabled]="curso.descricao?.length < 3 && curso.ementa?.length < 5">
+    salvar
+  </button>
+</div>

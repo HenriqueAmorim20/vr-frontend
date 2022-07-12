@@ -1,0 +1,28 @@
+<div mat-dialog-title>
+  <h2>Informações do aluno</h2>
+  <mat-icon (click)="dialogRef.close(false)">close</mat-icon>
+</div>
+<div mat-dialog-content>
+  <span><b>Nome: </b> {{ aluno.nome }}</span>
+
+  <div class="cursos">
+    <div class="title">
+      <b>Cursos vinculados: </b>
+      <mat-icon [matMenuTriggerFor]="menu">add</mat-icon>
+      <mat-menu #menu="matMenu" xPosition="before">
+        <span
+          *ngFor="let curso of cursos"
+          mat-menu-item
+          (click)="addCurso(curso)">
+          {{ curso.descricao }}
+        </span>
+      </mat-menu>
+    </div>
+    <div class="curso" *ngFor="let curso of aluno.cursos">
+      <span>
+        {{ curso.descricao }}
+      </span>
+      <mat-icon (click)="deleteCurso(curso.id)">delete</mat-icon>
+    </div>
+  </div>
+</div>

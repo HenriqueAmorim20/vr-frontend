@@ -1,0 +1,21 @@
+<div mat-dialog-title>
+  <h2>{{ aluno.id ? 'Editar aluno' : 'Adicionar aluno' }}</h2>
+  <mat-icon (click)="dialogRef.close(false)">close</mat-icon>
+</div>
+<div mat-dialog-content>
+  <mat-form-field appearance="legacy">
+    <mat-label>Nome</mat-label>
+    <input [(ngModel)]="aluno.nome" matInput required />
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="dialogRef.close(false)" class="danger">
+    cancelar
+  </button>
+  <button
+    mat-button
+    (click)="dialogRef.close(aluno)"
+    [disabled]="aluno.nome?.length < 3">
+    salvar
+  </button>
+</div>

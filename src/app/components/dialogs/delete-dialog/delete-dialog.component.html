@@ -1,0 +1,16 @@
+<div mat-dialog-title>
+  <h2>Deseja deletar esse {{ title }}?</h2>
+  <mat-icon (click)="dialogRef.close(false)">close</mat-icon>
+</div>
+<div mat-dialog-content>
+  <p>
+    O {{ title }} com <b>id {{ id }}</b> será deletado permanentemente, essa
+    ação é <b>irreverssível</b>.
+  </p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="dialogRef.close(false)">cancelar</button>
+  <button mat-button (click)="dialogRef.close(true)" class="danger">
+    deletar
+  </button>
+</div>

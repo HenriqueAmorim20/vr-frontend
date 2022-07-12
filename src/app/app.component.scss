@@ -1,0 +1,62 @@
+#app {
+  background-color: var(--background);
+  color: var(--primary);
+
+  .main {
+    margin: 5rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: calc(70vh);
+
+    .tabs {
+      background-color: var(--secondary);
+      border-radius: 5px 5px 0 0;
+      border: 1px solid var(--secondary);
+      width: 80%;
+      .mat-tab-label,
+      .mat-tab-label.mat-tab-label-active {
+        padding: 0.2rem 4rem;
+        color: #fff;
+        font-size: 1.2rem;
+        font-weight: 200;
+        letter-spacing: 2px;
+      }
+      /* Styles for the ink bar */
+      .mat-ink-bar {
+        background-color: #fff;
+      }
+
+      button {
+        border-radius: 2px;
+        cursor: pointer;
+        margin: 1rem;
+        padding: 0.5rem 1rem;
+        border: 1px solid #fff;
+        background-color: #fff;
+        color: var(--secondary);
+
+        font-size: 1rem;
+        &:hover {
+          background-color: transparent;
+          color: #fff;
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 950px) {
+  #app {
+    .main {
+      padding: 0 0.5rem;
+      .tabs {
+        width: 100%;
+      }
+    }
+  }
+}
